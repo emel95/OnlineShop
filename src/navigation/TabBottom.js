@@ -2,16 +2,15 @@ import React,{useCallback} from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomeScreen, CartScreen,FavoriteScreen } from '../view/screens/index';
 import {  BackHandler, Platform } from 'react-native';
-import Icon from 'react-native-vector-icons/AntDesign';
 import { useFocusEffect } from '@react-navigation/native';
-import COLORS from '../consts/colors';
-import { useShopContext } from '../context/cart/GlobalStateCart';
 import TabBar from './tabBottom/tabBars/TabBar';
+import StackForTabBar from './StackForTabBar';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 let backCounter = 0;
 const Tab = createBottomTabNavigator();
-
+const Stack = createNativeStackNavigator();
 
 const TabBottom = () => {
 
@@ -71,9 +70,9 @@ const TabBottom = () => {
       // }
     }}>
       {/* <Tab.Screen name="StackForTabBar"  component={StackForTabBar}/> */}
-      <Tab.Screen name="Home" component={HomeScreen} initialParams={{ lable: 'Home', icon: "home" }}/>
-      <Tab.Screen name="Favorite" component={FavoriteScreen} initialParams={{ lable: 'Favorite', icon: "hearto"}}/>
-      <Tab.Screen name="Cart" component={CartScreen} initialParams={{ lable: 'Cart', icon:"shoppingcart" }} />
+      <Stack.Screen name="Home" component={HomeScreen} initialParams={{ lable: 'Home', icon: "home" }}/>
+      <Stack.Screen name="Favorite" component={FavoriteScreen} initialParams={{ lable: 'Favorite', icon: "hearto"}}/>
+      <Stack.Screen name="Cart" component={CartScreen} initialParams={{ lable: 'Cart', icon:"shoppingcart" }} />
     </Tab.Navigator>
   )
 }

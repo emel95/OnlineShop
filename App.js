@@ -8,8 +8,9 @@ import GlobalStateProducts from './src/context/product/GlobalStateProducts';
 import StackMaster from './src/navigation/StackMaster';
 import GlobalStateFavorites from './src/context/Favorite/GlobalStateFavorites';
 import GlobalStateProductsCache from './src/context/product/GlobalStateProductsCache';
+import StackParent from './src/navigation/StackParent';
 // import { LogBox } from 'react-native';
-// LogBox.ignoreLogs([
+//LogBox.ignoreLogs([
 //   "[react-native-gesture-handler] Seems like you\'re using an old API with gesture components, check out new Gestures system!",
 // ]);
 
@@ -24,6 +25,7 @@ const App = () => {
         <GlobalStateFavorites>
           <NavigationContainer>
             <StatusBar barStyle='dark-content' backgroundColor={COLORS.white} />
+            {/* <StackParent/> */}
             <StackMaster />
           </NavigationContainer>
         </GlobalStateFavorites>
